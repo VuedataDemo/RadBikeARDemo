@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="ContainerStyle.css" />
   </head>
   <body>
-    <model-viewer id="modelView" src="./EBike.glb" ios-src="./Green Sofa.usdz" environment-image="neutral" shadow-intensity="0.3" ar camera-controls alt="A 3D model carousel">
+    <model-viewer id="modelView" src="./EBike.glb" ios-src="./EBike.usdz" environment-image="neutral" shadow-intensity="0.3" ar camera-controls alt="A 3D model carousel">
   
   <!--<button slot="ar-button" id="ar-button">
     AR
@@ -34,60 +34,64 @@
   <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
       👋 Activate AR
   </button>
- <!-- <div class="slider">
-    <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'Sofa_1','Green Sofa')" style="display: inline-block; background-color: #9ACD32;"></button>
-	  <button class="slide" onclick="switchSrc(this, 'Sofa_2','Red Sofa')" style="display: inline-block; background-color: #A52A2A;"></button>
-	  <button class="slide" onclick="switchSrc(this, 'Sofa_3','Pink Sofa')" style="display: inline-block; background-color: #BA55D3;"></button>
-	  
-	  </div>
-  </div>-->
-
-   <!--<div id="dropdwn">
-    <label for="drpdwnsrc">Product:</label>
-    <select id="drpdwnsrc">
-      <option value="Green Sofa||hj">Green Sofa</option>
-      <option value="Red Sofa||sd">Red Sofa</option>
-      <option value="Pink Sofa||sdf">Pink Sofa</option>
-      <option value="Black Chair||Black">Black Chair</option>
-      <option value="Brown Chair||Brown">Brown Chair</option>
-      <option value="Orange Chair||Orange">Orange Chair</option>
-      <option value="Red Lamp||Red">Red Lamp</option>
-      <option value="Green Lamp||Green">Green Lamp</option>
-      <option value="Pink Lamp||Pink">Pink Lamp</option>
-	  <option value="Black Bed||Pink">Black Bed</option>
-      <option value="Brown Bed||Brown">Brown Bed</option>
-      <option value="White Bed||White">White Bed</option>
-      <option value="Green DinningTable||Pink">Green DinningTable</option>
-      <option value="Brown DinningTable||Pink">Brown DinningTable</option>
-      <option value="White DinningTable||Pink">White DinningTable</option>
-      
-    </select><br>-->
 	
   
-  <div id="check">    
-	<label for="show-text">Annotations</label>
-    <input id="show-text" type="checkbox" checked="true">
+  <div id="check"> 
+	<input id="show-text" type="checkbox">  
+	<label for="show-text">Telescoping seatpost</label>
+	<br>
+    <input id="show-text2" type="checkbox">
+	<label for="show-text2">Integrated rear rack</label>
+    <br>
+	<input id="show-text3" type="checkbox">
+	<label for="show-text3">Geared hub motor</label>
+	<br>
+	<input id="show-text4" type="checkbox">
+	<label for="show-text4">Custom tires</label>
+    <br>
   </div>
   
-    <button class="Hotspot" id ="anectode" slot="hotspot-7" data-position="0m 0.46m 0m" data-normal="-0m 0m 0m"> <div id="annotation">Our&nbsp;designs&nbsp;are&nbsp;inspired by&nbsp;the&nbsp;new&nbsp;generation with&nbsp;a&nbsp;classic&nbsp;touch</div></button>
+    <button class="Hotspot" id ="anectode" slot="hotspot-1" data-position="-0.07367156476337364m 0.9886403216925633m 0.4049407572680128m" data-normal="0m 0m 0m"> <div id="annotation"></div></button>
+    <button class="Hotspot" id ="anectode2" slot="hotspot-2" data-position="-0.08946175502646984m 0.7417332907683247m 1.18852202845206m" data-normal="0m 0m 0m"> <div id="annotation2"></div></button>
+    <button class="Hotspot" id ="anectode3" slot="hotspot-3"data-position="0.04101679710261287m 0.5584075583623769m 0.030592924300133717m" data-normal="0m 0m 0m"> <div id="annotation3"></div></button>
+    <button class="Hotspot" id ="anectode4" slot="hotspot-4" data-position="0.03506024661472849m 0.5204296493532095m -0.8120204608073687m" data-normal="0m 0m 0m"> <div id="annotation4"></div></button>
     <!-- <button class="Hotspot" id ="anectode" slot="hotspot-2" data-position="0.1571773503677714m 0.34811380176846585m -0.18072995252219695m" data-normal="-0.019020629202478517m 0.08753284292171645m 0.9959800284517678m" data-visibility-attribute="visible"><div id="annotation">Brown Chair</div></button> -->
 	<div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
-	
 </model-viewer>
 
 <script type="module">
   const modelViewer = document.querySelector("model-viewer");
   const div = document.getElementById('annotation'); 
+  const div2 = document.getElementById('annotation2');
+  const div3 = document.getElementById('annotation3');
+  const div4 = document.getElementById('annotation4');
   
   	const checkbox = modelViewer.querySelector('#show-text');
+	const checkbox2= modelViewer.querySelector('#show-text2');
+	const checkbox3= modelViewer.querySelector('#show-text3');
+	const checkbox4= modelViewer.querySelector('#show-text4');
+	
+	
+	
     checkbox.addEventListener('change', () => {
     
       if (checkbox.checked) {
-         document.getElementById("anectode").classList.remove('hide');
-		console.log(checkbox.checked);
+		div.innerHTML = "Equipped&nbsp;with&nbsp;a&nbsp;telescoping &nbsp;seatpost&nbsp;with&nbsp;a&nbsp;375mm&nbsp; maximum&nbsp;length&nbsp;that's &nbsp;capable&nbsp;of&nbsp;accommodating&nbsp; riders&nbsp;between&nbsp;5'1&#8243;-&nbsp;6'4&#8243;.";
+        
+		document.getElementById('anectode').style.backgroundColor = '#7EC8E3';
+		div.style.backgroundColor = '#fff';
+		
+		document.getElementById("anectode").classList.remove('hide');
+		 
+		checkbox2.checked = false;
+		document.getElementById("anectode2").classList.add('hide');
+		checkbox3.checked = false;
+		document.getElementById("anectode3").classList.add('hide');
+		checkbox4.checked = false;
+		document.getElementById("anectode4").classList.add('hide');
+		 console.log(checkbox.checked);
 		
       } else {
          document.getElementById("anectode").classList.add('hide');
@@ -95,6 +99,84 @@
       }
     
   });
+	
+	checkbox2.addEventListener('change', () => {
+    
+      if (checkbox2.checked) {
+	   div2.innerHTML = "Attach&nbsp;bags,baskets,passenger&nbsp;seats&nbsp; or&nbsp;simply&nbsp;strap&nbsp;on&nbsp;bulky&nbsp;items &nbsp;-&nbsp;the&nbsp;extended&nbsp;size&nbsp;and&nbsp;integrated&nbsp;rack&nbsp; make&nbsp;hauling&nbsp;a&nbsp;cinch.";
+         
+		document.getElementById('anectode2').style.backgroundColor = '#7EC8E3';
+		div2.style.backgroundColor = '#fff';
+		 
+		 document.getElementById("anectode2").classList.remove('hide');
+		
+		checkbox.checked = false;
+		document.getElementById("anectode").classList.add('hide');
+		checkbox3.checked = false;
+		document.getElementById("anectode3").classList.add('hide');
+		checkbox4.checked = false;
+		document.getElementById("anectode4").classList.add('hide');
+		console.log(checkbox.checked);
+		 
+		
+      } else {
+		 document.getElementById("anectode2").classList.add('hide');
+		 console.log(checkbox.checked);
+      }
+    
+  });
+  
+	  checkbox3.addEventListener('change', () => {
+		
+		  if (checkbox3.checked) {
+		   div3.innerHTML = "Climb&nbsp;hills&nbsp;and&nbsp;zip&nbsp;across&nbsp; \n intersections&nbsp;powered&nbsp;by&nbsp;\n our&nbsp;Rad-engineered&nbsp; 750W&nbsp;motor,&nbsp;designed&nbsp;  in-house&nbsp;to&nbsp;help&nbsp;you&nbsp;go&nbsp;\n steeper&nbsp;at&nbsp;lower&nbsp;speeds.";
+		   
+		   document.getElementById('anectode3').style.backgroundColor = '#7EC8E3';
+		   div3.style.backgroundColor = '#fff';
+		   
+		   document.getElementById("anectode3").classList.remove('hide');
+			
+			checkbox.checked = false;
+			document.getElementById("anectode").classList.add('hide');
+			checkbox2.checked = false;
+		    document.getElementById("anectode2").classList.add('hide');
+			checkbox4.checked = false;
+		    document.getElementById("anectode4").classList.add('hide');
+			console.log(checkbox.checked);
+			 
+			
+		  } else {
+			 document.getElementById("anectode3").classList.add('hide');
+			 console.log(checkbox.checked);
+		  }
+		
+	  });
+	
+	 checkbox4.addEventListener('change', () => {
+		
+		  if (checkbox4.checked) {
+		   div4.innerHTML = "The&nbsp;22&#8243;&nbsp;x&nbsp;3&#8243;&nbsp;tires,designed&nbsp;in-house&nbsp; by&nbsp;Rad&nbsp;engineers,&nbsp;feature&nbsp;a&nbsp;custom&nbsp; tread&nbsp;pattern&nbsp;for&nbsp;smoother&nbsp;riding&nbsp; on&nbsp;uneven&nbsp;surfaces,and&nbsp;an&nbsp;overall&nbsp;size&nbsp; that&nbsp;provides&nbsp;a&nbsp;lower&nbsp;center&nbsp;of&nbsp;gravity.";
+			
+			document.getElementById('anectode4').style.backgroundColor = '#7EC8E3';
+		    div4.style.backgroundColor = '#fff';
+			
+			document.getElementById("anectode4").classList.remove('hide');
+			
+			checkbox.checked = false;
+			document.getElementById("anectode").classList.add('hide');
+			checkbox2.checked = false;
+		    document.getElementById("anectode2").classList.add('hide');
+			checkbox3.checked = false;
+		    document.getElementById("anectode3").classList.add('hide');
+			console.log(checkbox.checked);
+			 
+			
+		  } else {
+			 document.getElementById("anectode4").classList.add('hide');
+			 console.log(checkbox.checked);
+		  }
+		
+	  });
 	
 	var colorValues="Green,Red,Pink";
     var productName = "Sofa";
@@ -180,6 +262,11 @@
     right: 18px;
   }
   
+  #check2 {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+  }
   .hide{
     display: none;
   }
