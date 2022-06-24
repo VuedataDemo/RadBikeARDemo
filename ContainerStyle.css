@@ -52,11 +52,38 @@ model-viewer {
     height: 20px;
     border-radius: 10px;
     border: none;
-    background-color: #7EC8E3;
+    background-color: transparent;
     box-sizing: border-box;
   }
-
- 
+  #anectode2{
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+   
+  #anectode3{
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+	#anectode4{
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+	
   button[slot="hotspot-foot"]:not([data-visible]) {
     background-color: transparent;
     border: 3px  #7EC8E3;
@@ -71,13 +98,36 @@ model-viewer {
   
   
  #annotation{
-    background-color: #fff;
+    background-color: transparent;
     position: absolute;
     transform: translate(10px, 10px);
     border-radius: 10px;
     padding: 10px;
   }
 
+  #annotation2{
+    background-color: transparent;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  #annotation3{
+    background-color: transparent;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  #annotation4{
+    background-color: transparent;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
 footer {
   display: flex;
   flex-direction: column;
